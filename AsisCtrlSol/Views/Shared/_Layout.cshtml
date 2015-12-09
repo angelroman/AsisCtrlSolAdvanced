@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <style>
+        .Mi-Menu
+        {
+            list-style:none;
+            margin:0px; 
+            padding:0px;            
+        }
+        .Menu-Element
+        {
+            padding-top:15px;
+            height:50px;      
+            color:#ffffff;  
+            text-align:center;             
+        }
+        .Menu-Element:hover
+        {
+            background-color:#0094ff;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="row Mi-Menu">
+                    <li class="col-md-2"></li>
+                    <li>@Html.ActionLink("Estudiantes", "Index", "Estudiantes")</li>
+                    <li class="col-md-2 Menu-Element" id="btnAcercaDe">Acerca de Solocon</li>
+                    <li class="col-md-2 Menu-Element" id="btnSoluciones">Soluciones</li>
+                    <li class="col-md-2 Menu-Element" id="btnContacto">Contacto</li>
+                    <li class="col-md-4 Menu-Element" id="btnSignUp">SignUp</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" id="contentRender">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Control de Asistencia SOLCON</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $('document').ready(function () {
+            $('#btnAcercaDe').click(function () {
+                $('#contentRender').load('/Home/Herramientas')
+            })
+            $('#btnSignUp').click(function () {
+                $('#contentRender').load('/Auth/SignUp')
+            })
+        })
+    </script>
+</body>
+</html>
