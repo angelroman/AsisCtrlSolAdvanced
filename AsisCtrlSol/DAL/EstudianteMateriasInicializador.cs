@@ -12,8 +12,13 @@ namespace AsisCtrlSol.DAL
     {
         protected override void Seed(EstudianteMateriasContexto context)
         {
-            var Estudiante = new Estudiante{EstudianteID=10100282, Nombre="Luis",Apellido_Materno="Romero",Apellido_Paterno="Reyes",Fecha_Nacimiento="08/04/91"};
-            context.Estudiantes.Add(Estudiante);
+            var Estudiante = new List<Estudiante>
+            {
+                new Estudiante{ EstudianteID =10100282, Nombre="Luis",Apellido_Materno="Romero",Apellido_Paterno="Reyes",Fecha_Nacimiento="08/04/91"},
+                new Estudiante { EstudianteID =10100283, Nombre="Angel",Apellido_Materno="Roman",Apellido_Paterno="Camacho",Fecha_Nacimiento="08/04/91"}
+            };
+            Estudiante.ForEach(u => context.Estudiantes.Add(u));
+            context.SaveChanges();
             
 
             var Materia = new Materia { Nombre_Materia = "Ingles", Creditos_Materia = 5, ID = 1 };
