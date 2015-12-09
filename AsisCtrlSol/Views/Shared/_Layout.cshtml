@@ -7,6 +7,7 @@
         .Mi-Menu
         {
             list-style:none;
+            text-decoration:none;
             margin:0px; 
             padding:0px;            
         }
@@ -15,11 +16,13 @@
             padding-top:15px;
             height:50px;      
             color:#ffffff;  
-            text-align:center;             
+            text-align:center; 
+            text-decoration:none;            
         }
         .Menu-Element:hover
         {
             background-color:#0094ff;
+            text-decoration: none;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,12 +43,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="row Mi-Menu">
-                    <li class="col-md-2"></li>
-                    <li>@Html.ActionLink("Estudiantes", "Index", "Estudiantes")</li>
-                    <li class="col-md-2 Menu-Element" id="btnAcercaDe">Acerca de Solocon</li>
-                    <li class="col-md-2 Menu-Element" id="btnSoluciones">Soluciones</li>
-                    <li class="col-md-2 Menu-Element" id="btnContacto">Contacto</li>
-                    <li class="col-md-4 Menu-Element" id="btnSignUp">SignUp</li>
+                    <li class="col-md-2 Menu-Element"><a href="~/Home/Index">Inicio</a></li>
+                    <li class="col-md-2 Menu-Element">@Html.ActionLink("Estudiantes", "Index", "Estudiantes")</li>
+                    <li class="col-md-2 Menu-Element" id="btnAcercaDe"><a href="~/Home/About">Acerca de Solocon</a></li>
+                    <li class="col-md-2 Menu-Element" id="btnSoluciones"><a href="#">Soluciones</a></li>
+                    <li class="col-md-2 Menu-Element" id="btnContacto"><a href="~/Home/Contact">Contacto</a></li>
+                    <li class="col-md-2 Menu-Element" id="btnSignUp"><a href="~/Auth/SignUp">SignUp</a></li>
 
                 </ul>
             </div>
@@ -63,6 +66,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
+        /*
         $('document').ready(function () {
             $('#btnAcercaDe').click(function () {
                 $('#contentRender').load('/Home/Herramientas')
@@ -70,7 +74,8 @@
             $('#btnSignUp').click(function () {
                 $('#contentRender').load('/Auth/SignUp')
             })
-        })
+        });
+        */
     </script>
 </body>
 </html>
