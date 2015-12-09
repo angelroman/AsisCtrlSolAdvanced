@@ -14,6 +14,8 @@ namespace AsisCtrlSol.Models
         public string Fecha_Nacimiento { get; set; }
 
         public virtual ICollection<Enlistamiento> Enlistamientos { get; set; }
+        
+        //comentario
 
     }
 }
