@@ -12,17 +12,19 @@
     }
 </style>
 <h1>Para iniciar Sesion en Solcon por favor ingrese sus credenciales</h1>
-<form class="row Auth-Box">
+<form class="row Auth-Box" id="frmLogin" method="post">
     <div class="col-md-6 col-md-offset-4">
         <div class="form-group">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" class="form-control"/><br />
+            <input type="text" id="inputUser" placeholder="Usuario" required class="form-control" /><br />
          </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" /><br />
+            <br />
+            <input type="password" id="inputPassword" placeholder="Contrase&ntilde;a" required class="form-control" /><br />
         </div>
-        <button type="submit" class="btn btn-default">Enviar</button>
+        <input type="button" id="btnLogin" value="Aceptar" class="btn btn-default"/>
+        <div id="mensaje"></div>
         <div class="row">
             <div class="col-md-12"></div>
         </div>

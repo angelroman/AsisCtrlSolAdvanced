@@ -36,6 +36,13 @@ namespace AsisCtrlSol.DAL
                 new Enlistamiento { EnlistamientoID = 08122016, EstudianteID = 10100283, MateriaID = 1 },
             };
 
+            var usuarios = new List<Usuario>
+            {
+                new Usuario { usuarioID = 1, username = "admin", password = "123" },
+                new Usuario { usuarioID = 2, username = "invitado", password = "321" }
+            };
+            usuarios.ForEach(u => context.Usuarios.Add(u));
+
             context.SaveChanges();
 
 
